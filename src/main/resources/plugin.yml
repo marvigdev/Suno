@@ -1,7 +1,10 @@
 name: Suno
 version: '${project.version}'
-main: dev.marvig.suno.Main
+main: main
 api-version: 1.18
-prefix: suno
+prefix: head.Main
 load: STARTUP
 description: Multipurpose Minecraft plugin.
+commands:
+  gamemode:
+  gm:
