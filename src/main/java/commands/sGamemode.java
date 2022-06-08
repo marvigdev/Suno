@@ -9,7 +9,6 @@ import org.bukkit.entity.Player;
 public class sGamemode implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender Sender, Command Cmd, String Label, String[] Args) {
-
         Player p = (Player)Sender;
         if(Cmd.getName().equalsIgnoreCase("gamemode") || Cmd.getName().equalsIgnoreCase("gm")){
             if(Args.length == 0){

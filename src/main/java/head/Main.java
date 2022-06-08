@@ -7,14 +7,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
 public final class Main extends JavaPlugin {
-
     Logger logger = Bukkit.getLogger();
 
     @Override
     public void onEnable() {
+        Loader.loadCommands(this);
+        Loader.loadEvents(this);
+
         logger.warning("§[suno] Started successfully");
-        getCommand("gm").setExecutor(new sGamemode());
-        getCommand("commands.sGamemode").setExecutor(new sGamemode());
     }
 
     @Override
