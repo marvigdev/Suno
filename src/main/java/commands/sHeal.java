@@ -10,29 +10,24 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitScheduler;
-
-import static head.Main.plugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class sHeal implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender Sender, Command Cmd, String Label, String[] Args) {
-
         Player p = (Player)Sender;
-
         if(Cmd.getName().equalsIgnoreCase("heal")){
             if(Args.length == 0) {
-               Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-                   @Override
+                p.sendTitle("Aguarde 3 segundos!", "Debuff temporario antes da cura...", 3, 100, 3);
+                p.setHealth(1);
+                p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 200));
+               new BukkitRunnable(){
                    public void run() {
-                       p.sendTitle("Aguarde 3 segundos!", "Debuff temporario antes da cura...", 3, 20, 3);
-                       p.setHealth(1);
-                       p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 200));
+                       p.removePotionEffect(PotionEffectType.BLINDNESS);
+                       p.setHealth(20);
                    }
-               }, 60L);
-                p.removePotionEffect(PotionEffectType.BLINDNESS);
-                p.setHealth(20);
+               }.runTaskLater(Main.plugin, 60L);
                 return true;
             }
             Player t = Bukkit.getPlayer(Args[1]);

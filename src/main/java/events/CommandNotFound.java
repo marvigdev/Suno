@@ -2,11 +2,13 @@ package events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.help.HelpTopic;
 
 public class CommandNotFound implements Listener {
+    @EventHandler
     public void onPlayerCommandPreprocess(final PlayerCommandPreprocessEvent e) {
 
         if (!e.isCancelled()) {

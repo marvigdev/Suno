@@ -1,8 +1,9 @@
+events/LoginAndLogout.class
 commands/sGamemode.class
 events/CommandNotFound.class
 commands/sHeal.class
+events/AutoTable.class
 head/Loader.class
 commands/sAdeus.class
-events/DelayAnimation.class
 head/Main.class
 commands/sHeal$1.class
