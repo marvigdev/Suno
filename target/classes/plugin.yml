@@ -1,6 +1,6 @@
 name: Suno
 version: '1.0'
-main: main
+main: head.Main
 api-version: 1.18
 prefix: head.Main
 load: STARTUP

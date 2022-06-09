@@ -1,6 +1,6 @@
 name: Suno
 version: '${project.version}'
-main: main
+main: head.Main
 api-version: 1.18
 prefix: head.Main
 load: STARTUP

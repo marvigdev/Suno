@@ -12,16 +12,14 @@ public class sGamemode implements CommandExecutor {
         Player p = (Player)Sender;
         if(Cmd.getName().equalsIgnoreCase("gamemode") || Cmd.getName().equalsIgnoreCase("gm")){
             if(Args.length == 0){
-                p.sendMessage("Comando incorreto use §c[ /gamemode (1 | 0)");
+                if (p.getGameMode() == GameMode.CREATIVE) {
+                    p.setGameMode(GameMode.SURVIVAL);
+                    p.sendMessage("§aSeu gamemode foi alterado");
+                } else {
+                    p.setGameMode(GameMode.CREATIVE);
+                    p.sendMessage("§aSeu gamemode foi alterado");
+                }
                 return true;
-            }
-            if(Args[0].equalsIgnoreCase("1")){
-                p.setGameMode(GameMode.CREATIVE);
-                p.sendMessage("Seu gamemode foi alterado");
-            }
-            if(Args[0].equalsIgnoreCase("0")){
-                p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage("Seu gamemode foi alterado");
             }
         }
         return false;
