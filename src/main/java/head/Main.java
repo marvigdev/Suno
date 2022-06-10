@@ -16,6 +16,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        plugin = this;
         Loader.loadCommands(this);
         Loader.loadEvents(this);
         logger.warning("§[suno] Started successfully");

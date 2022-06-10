@@ -1,0 +1,13 @@
+package commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class Adeus implements CommandExecutor {
+    public boolean onCommand(CommandSender Sender, Command Cmd, String Label, String[] Args) {
+        Player p = (Player)Sender;
+        p.getPlayer().sendTitle("Adios","Maninho" ,1, 100, 1);
+        return true;}
+}

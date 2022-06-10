@@ -7,5 +7,9 @@ load: STARTUP
 description: Multipurpose Minecraft plugin.
 commands:
   gamemode:
-  gm:
+      usage: /command
+      aliases: [gm]
   heal:
+    usage: /command
+  food:
+    usage: /command
